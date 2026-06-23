@@ -33,7 +33,7 @@ console.log(inst) // return the name of the instructor
 //     price: "free",
 // }
 
-// API can be in the orm if ann array which contain many objects
+// API can be in the form of ann array which contain many objects
 
 // [
 //     {},
