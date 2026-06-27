@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafays Den</title>
+</head>
+<body style="background-color: black; color: aliceblue;" >
+    <ul class="language">
+        <li>
+            Javascript
+        </li>
+    </ul>
+</body>
+<script>
+    function addlanguage (langName) {
+        const li = document.createElement('li')
+        // console.log(lii)
+        li.textContent = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage('python')
+    addlanguage('goLang')
+    addlanguage('C++')
+    
+    // edit
+
+    const sencondlang = document.querySelector("li:nth-child(2)")
+    const newLi = document.createElement('li')
+    newLi.textContent = 'mojo'
+    sencondlang.replaceWith(newLi)
+
+    // edit 
+    const thridlang = document.querySelector("li:nth-child(3)")
+    const newgoLi = document.createElement('li')
+    newgoLi.textContent = "Ruby"
+    thridlang.replaceWith (newgoLi)
+
+    // edit another way to edit
+
+    const lang = document.querySelector("li:last-child")
+    lang.outerHTML = '<li> TypeScript </li>'
+
+    // remove
+
+    const removeLang = document.querySelector("li:nth-child(2)")
+    removeLang.remove() 
+    
+</script>
+</html>
