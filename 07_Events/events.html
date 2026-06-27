@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: white;
+        text-align: center;
+      }
+
+      #images {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+      }
+
+      #images li {
+        width: 250px;
+      }
+
+      #images img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      #images img:hover {
+        transform: scale(1.05);
+      }
+
+      p {
+        margin-top: 8px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Amazing Images</h1>
+
+    <div>
+      <ul id="images">
+        <li id="naruto">
+          <img
+            src="https://cdn.myanimelist.net/images/anime/13/17405.jpg"
+            alt="Naruto"
+          />
+        </li>
+
+        <li id="onepiece">
+          <img
+            src="https://cdn.myanimelist.net/images/anime/6/73245.jpg"
+            alt="One Piece"
+          />
+        </li>
+
+        <li id="attackontitan">
+          <img
+            src="https://cdn.myanimelist.net/images/anime/10/47347.jpg"
+            alt="Attack on Titan"
+          />
+        </li>
+
+        <li id="demonslayer">
+          <img
+            src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg"
+            alt="Demon Slayer"
+          />
+        </li>
+
+        <li id="jujutsukaisen">
+          <img
+            src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg"
+            alt="Jujutsu Kaisen"
+          />
+        </li>
+
+        <li id="deathnote">
+          <img
+            src="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
+            alt="Death Note"
+          />
+        </li>
+
+        <li>
+          <a href="https://www.google.com" id="google">Google</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("deathnote").onclick = function() {
+    //     alert("deathnote clicked")
+    // }
+    // alert("deathnote clicked")
+    // event objects
+    // write about these
+    //type , tiestamp, defaultPrevented, target, toElement, srcElement
+    // clientX, clientY, screenX, screenY
+    //altkey, atrlkey, shiftkey, keyCode
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function () {
+    //     console.log("image is clicked");
+    //   },
+    //   false,
+    // );
+    // document.getElementById("deathnote").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     // console.log('deathnote is clicked')
+    //     console.log("deathnote is clicked");
+    //     e.stopPropagation();
+    //   },
+    //   false,
+    // );
+
+    //event Propagation ---> it has two context
+    // event bubbling and event capturing
+    // bubbling up ---> bubble runs from bottom to top
+    // capturing --> top to bottom
+
+    // prevent default
+    /*
+    event.preventDefault() stops the browser's default action for an event.
+
+    Think of it this way:
+
+    An event occurs (click, submit, key press, etc.).
+    The browser has a built-in behavior for that event.
+    preventDefault() tells the browser: "Don't do the built-in behavior; I'll handle it myself."
+    */
+    // document.getElementById("google").addEventListener("click", function (e) {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   console.log("google is clicked");
+    // });
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        // sometimes we need parent nodes as well so we can access then like this
+        console.log(e.target.parentNode.tagName)// on which target event is happening
+        if (e.target.tagName === 'IMG' ) {
+            // if (e.target.tagName === 'A') {
+                
+                const removeIt = e.target.parentNode
+                removeIt.remove()
+            // }
+        }  
+
+    })
+  </script>
+</html>
