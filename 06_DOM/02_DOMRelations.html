@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Relation</title>
+    <style>
+        .bg-color {
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body class="bg-color">
+    <h1>
+        Hello its Me Rafay
+    </h1>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Thuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+<script>
+    // const cla = document.getElementsByClassName('parent')
+    // console.log(cla)
+    // const cla2 = document.querySelectorAll('.parent') // we cann access class by using '.'
+    // console.log(cla2)
+    const parent = document.querySelector('.parent') // we cann access class by using '.'
+    // console.log(parent.children[0].innerHTML) // we can asccess as well because it is an array like so we can access like this as well
+    // console.log(parent.children[1].innerHTML)
+    // console.log(parent.children[2].innerHTML)
+    // console.log(parent.children[3].innerHTML)
+
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    //     parent.children[i].style.color = "cyan"
+
+    // }
+
+    // const covertingIntoAnArray = Array.from(parent.children)
+
+    // console.log(covertingIntoAnArray)
+
+    // covertingIntoAnArray.forEach((day) => (
+    //     day.style.color = "red" // its and array we can directly 
+    //     // use the css stylying without the parent and child conflict
+    // ));
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // const dayOne = document.querySelector('.day')
+    // console.log(dayOne)
+    // console.log(dayOne.parentElement) // we can access from child to parent
+    
+
+</script>
+</html>
