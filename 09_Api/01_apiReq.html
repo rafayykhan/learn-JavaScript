@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        
+    </div>
+    
+</body>
+<script>
+    /*
+    
+    
+    
+    */
+    // XMLHttpRequest() its a method through which we can send and recieve data
+    const reqUrl = 'https://api.github.com/users/rafayykhan'
+    const req = new XMLHttpRequest()
+    
+    
+    req.open('GET', reqUrl)
+    // req.onreadystatechange  always monitor the states and 
+    req.onreadystatechange = function() {
+        if(req.readyState === 4) {
+            const data = JSON.parse(this.responseText)     // this data will be in string and we should be converting inrto JSON
+            console.log(data)
+            console.log(data.followers)  // we can get data like this
+
+        }
+    }
+    // console.log(req.readyState)
+    req.send()
+</script>
+
+</html>
