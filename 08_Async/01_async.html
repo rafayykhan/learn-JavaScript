@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body style="background-color: black; color: azure;">
+    <h1 id = 'raf'>Hello its me Rafay Khan</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //  its a method and also calls API
+//     setTimeout(function() {
+//         console.log('Rafay')
+//     }, 2000) // what it does that it will give result after 2 secs like it will perform its function after 
+//     // some time 
+
+//     // setInterval(() => {
+//     //     console.log('Rafay')
+//     // }, 2000)
+// // idk why arrow function was not working
+//     const changeText = function () {
+//         document.querySelector('h1').innerHTML = "Hello Its me again Rafay."
+//     }
+//     const changeMe = setTimeout(changeText, 2000)
+//     // clearTimeout() // this take refernce like it wants i am clearing time for what intervel
+//     // clearTimeout(changeMe, 1000)
+
+//     document.querySelector('#stop').addEventListener('click', function(){
+//         clearTimeout(changeMe) 
+//     }) // so this event will stop the event to happpen but if you click the
+//     // button before the time given in setintervel
+
+    // const start = function(){
+    //     // console.log("hello")
+    //     document.querySelector('#start').addEventListener('click', function (){
+    //         console.log('hello')
+    //     })
+    // }
+
+    // // const startIntervel = document.querySelector('#start').addEventListener('click', function() {
+    // //         setInterval(start)
+    // // })
+
+    // const changeMe = setInterval(start, 2000)
+    // const stopIntervel = document.querySelector('#stop').addEventListener('click', function() {
+    //         // clearInterval(changeMe)
+    // })
+
+    // clearInterval()
+    // // setInterval(startIntervel)
+
+    /* mistakes i made
+     Declared startIntervel inside the Start button callback, making it inaccessible to the Stop button.
+     Used const for startIntervel, then tried to assign a new interval ID to it.
+     Called clearInterval() without passing the interval ID.
+    */
+
+    let startIntervel
+
+    document.querySelector('#start').addEventListener('click', function() {
+        if(!startIntervel) {
+            startIntervel = setInterval (function() {
+                console.log(document.querySelector('#raf').innerHTML)
+            }, 100)
+
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearInterval(startIntervel)
+    });
+    
+
+
+
+</script>
+</html>
