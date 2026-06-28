@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Counter App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      #count {
+        font-size: 50px;
+        margin: 20px 0;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+      }
+
+      #increment {
+        background-color: green;
+      }
+
+      #decrement {
+        background-color: red;
+      }
+
+      #reset {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Counter App</h1>
+      <div id="count">0</div>
+
+      <button id="decrement">-</button>
+      <button id="reset">Reset</button>
+      <button id="increment">+</button>
+    </div>
+
+    <script>
+      // start the count at 0
+      let count = 0;
+
+      // grab the elements we need
+      const countDisplay = document.getElementById("count");
+      const incrementBtn = document.getElementById("increment");
+      const decrementBtn = document.getElementById("decrement");
+      const resetBtn = document.getElementById("reset");
+
+      // increase count by 1
+      incrementBtn.addEventListener("click", function () {
+        count = count + 1;
+        countDisplay.textContent = count;
+      });
+
+      // decrease count by 1
+      decrementBtn.addEventListener("click", function () {
+        count = count - 1;
+        countDisplay.textContent = count;
+      });
+
+      // reset count back to 0
+      resetBtn.addEventListener("click", function () {
+        count = 0;
+        countDisplay.textContent = count;
+      });
+    </script>
+  </body>
+</html>
